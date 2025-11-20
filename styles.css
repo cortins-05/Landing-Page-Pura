@@ -1,0 +1,318 @@
+.anton{
+    font-family: "Anton";
+}
+
+.titulillo{
+    z-index: 2;
+    padding: 10px;
+    position: relative;
+    display: inline-block;
+}
+.titulillo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: white;
+    z-index: -1;
+    transition: width 300ms;
+}
+.titulillo:hover::before {
+    width: 100%;
+}
+
+.subrayado{
+    position: relative;
+}
+.subrayado::after{
+    content: "";
+    background-color: gray;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+}
+
+.enlace{
+    cursor: pointer;
+    position: relative;
+}
+.enlace::after{
+    content: "";
+    background-color: gray;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+}
+.enlace::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 0;
+    background-color: white;
+    transition: width 400ms ease;
+    z-index: 2;
+}
+.enlace:hover::before{
+    width: 100%;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    height: 200vh;
+    scroll-behavior: smooth;
+}
+
+#navegacion{
+    top: 0;
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    z-index: 10;
+    transition: all 200ms;
+    padding: 0px 20px;
+}
+#navegacion>a{
+    height: 70%;
+}
+#logo{
+    height: 100%;
+}
+
+#hamburguer{
+    height: 18px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    
+}
+#hamburguer span{
+    background-color: white;
+    height: 4px;
+    border-radius: 5px;
+    transition: transform 400ms;
+}
+
+#menu-desplegable{
+    transition: all 200ms;
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    color: white;
+    z-index: 10;
+    display: none;
+    justify-content: center;
+    align-content: center;
+    gap: 80px;
+    grid-template-columns: repeat(2,30%);
+    grid-template-rows: repeat(3,auto);
+}
+
+#menu-desplegable div{
+    position: relative;
+}
+#menu-desplegable div::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: gray;
+}
+#menu-desplegable div::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background-color: white;
+    transition: width 400ms ease;
+    z-index: 2;
+}
+#menu-desplegable div:hover::before{
+    width: 100%;
+}
+#menu-desplegable div a{
+    color: white;
+}
+
+
+/* Header */
+#inicio{
+    background-image: url(assets/fondo.jpg);
+    height: 100vh;
+    background-position: center center;
+    display: flex;
+    justify-content: start;
+    padding-left: 4%;
+    align-items: center;
+}
+
+.wrapper {
+    margin-top: 20%;
+    --gold: #ffb338;
+    --light-shadow: #77571d;
+    --dark-shadow: #3e2904;
+  display: grid;
+  grid-template-areas: 'overlap';
+  place-content: center;
+  text-transform: uppercase;
+}
+.wrapper > div {
+  background-clip: text;  
+  -webkit-background-clip: text;
+  color: #363833;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: 60px;
+  grid-area: overlap;
+  letter-spacing: 1px;
+  -webkit-text-stroke: 4px transparent;
+}
+div.bg {
+  background-image: repeating-linear-gradient( 105deg, 
+    var(--gold) 0% , 
+    var(--dark-shadow) 5%,
+    var(--gold) 12%);
+  color: transparent;
+  filter: drop-shadow(5px 15px 15px black);
+  transform: scaleY(1.05);
+  transform-origin: top;
+}
+div.fg{
+  background-image: repeating-linear-gradient( 5deg,  
+    var(--gold) 0% , 
+    var(--light-shadow) 23%, 
+    var(--gold) 31%);
+  color: #1e2127;
+  transform: scale(1);
+}
+
+/* Modelos */
+#modelos{
+    padding: 120px 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+#modelos>div:nth-child(1){
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: baseline;
+}
+#modelos>div:nth-child(1)>h3{
+    font-size: 40px;
+    text-transform: uppercase;
+    font-family: "Anton";
+    font-weight: 400;
+}
+
+.enlace{
+    cursor: pointer;
+    position: relative;
+}
+.enlace::after{
+    content: "";
+    background-color: gray;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+}
+.enlace::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 0;
+    background-color: white;
+    transition: width 400ms ease;
+    z-index: 2;
+}
+.enlace:hover::before{
+    width: 100%;
+}
+
+
+.carousel {
+    position: relative;
+    width:  50%;    
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+.carousel-track img {
+    width: 100%;    
+    height: auto;
+}
+
+
+#servicios{
+    background-color: #343a40;
+    padding: 100px 70px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1fr 3fr 3fr;
+    justify-items: center;
+    justify-content: space-around;
+    align-content: space-around;
+    gap: 40px;
+}
+#servicios h3{
+    font-size: 3em;
+}
+#servicios h5{
+    font-size: 2em;
+}
+#servicios img{
+    width: 50%;
+}
+.servicio-imagen{
+    display: flex;
+    gap: 10px;
+    align-items: end;
+    margin-top: 20px;
+}
+.servicio-imagen p{
+    width: 50%;
+    font-size: large;
+}
+@media (max-width:809px) {
+    #servicios{
+        display: block;
+    }
+}
