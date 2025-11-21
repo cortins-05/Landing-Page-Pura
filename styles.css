@@ -27,6 +27,9 @@
 
     /* **Transiciones** */
     --transition: 300ms ease;
+
+    /* Padding General */
+    --padding-general : 8% 7%;
 }
 
 
@@ -144,7 +147,7 @@ body{
 }
 #hamburguer span{
     background-color: white;
-    height: 4px;
+    height: 3px;
     border-radius: 5px;
     transition: transform 400ms;
 }
@@ -163,6 +166,8 @@ body{
     grid-template-columns: repeat(2,30%);
     grid-template-rows: repeat(3,auto);
 }
+
+
 
 #menu-desplegable div{
     position: relative;
@@ -249,7 +254,7 @@ div.fg{
 
 /* Modelos */
 #modelos{
-    padding: 120px 90px;
+    padding: 8% 7%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -260,7 +265,7 @@ div.fg{
     display: flex;
     width: 100%;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: end;
 }
 #modelos>div:nth-child(1)>h3{
     font-size: 40px;
@@ -300,7 +305,7 @@ div.fg{
 
 #carousel {
     position: relative;
-    width:  50%;    
+    width:  70%;    
     overflow: hidden;
 }
 #carousel-track {
@@ -354,7 +359,7 @@ div.fg{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 120px 90px;
+    padding: var(--padding-general);
     gap: 40px;
     height: calc(100vh - 320px);
     background-color: var(--blanco);
@@ -364,7 +369,7 @@ div.fg{
 #empresa{
     background-color:var(--color-secundario);
     height: calc(100vh - 320px) ;
-    padding: 120px 90px;
+    padding: var(--padding-general);
     display: flex;
     max-width: 100%;
 }
@@ -395,7 +400,7 @@ div.fg{
 
 #noticias{
     background-color: var(--bg-secundario);
-    padding: 120px 90px;
+    padding: var(--padding-general);
     display: flex;
     gap: 60px;
     flex-wrap: wrap;
@@ -435,4 +440,34 @@ footer div{
     flex: 1;
     color: white;
     font-weight: 500;
+}
+
+@media (max-width: 768px) {  
+    #menu-desplegable {
+        grid-template-columns: 1fr;      /* 1 columna */
+        grid-template-rows: repeat(6, auto); /* 6 filas */
+        gap: 30px; /* opcional: reducir separación en móviles */
+    }
+    #empresa{
+        height: 70vh;
+    }
+    .display img{
+        height: 300px;
+    }
+}
+@media (max-width:585px) {
+    .servicio-imagen{
+        display: block;
+        margin-bottom: 15px;
+    }
+    .display{
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+}
+@media (max-width: 425px) {  
+    #modelos>div:nth-child(1)>h3 {
+        font-size: 1em !important;
+    }
 }

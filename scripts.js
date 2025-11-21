@@ -4,9 +4,9 @@ let tamañoVentana = window.innerHeight;
 
 function zonaOpacidad() {
     let alpha = window.scrollY / tamañoVentana * 5.5;
-
     if(alpha > 1) alpha = 1; // límite máximo
     navegacion.css("background-color",`rgba(10,31,68,${alpha})`);
+    navegacion.css("box-shadow",`0 4px 10px rgba(0,0,0,${alpha*0.2})`)
 }
 
 zonaOpacidad();
@@ -28,7 +28,6 @@ menuDesplegable.css("height", `calc(100vh - ${alturaNavegacion}px)`);
 function expander(){
     $('#menu span:first').css("transform","rotateZ(135deg) translateY(-9px)");
     $('#menu span:last').css("transform","rotateZ(-135deg) translateY(10px)");
-    $('#menu span:nth-child(2)').css("transform","translateX(6px)");
     navegacion.css("background-color","rgb(10, 31, 68)");
     menuDesplegable.css("display","grid");
     menuDesplegable.css("transform",`translateY(${(alturaNavegacion+tamañoVentana)}px)`);
@@ -36,7 +35,6 @@ function expander(){
 function contraer() {
     $('#menu span:first').css("transform","rotateZ(0) translateY(0)");
     $('#menu span:last').css("transform","rotateZ(0) translateY(0)");
-    $('#menu span:nth-child(2)').css("transform","translateX(0px)");
     let alpha = window.scrollY / tamañoVentana * 1.5;
     navegacion.css("background-color",`rgba(10,31,68,${alpha})`);
     menuDesplegable.css("transform",`translateY(0px)`);
