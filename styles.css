@@ -419,3 +419,20 @@ div.fg{
     font-weight: bold;
     color: var(--color-primario);
 }
+
+
+footer{
+    background-color: var(--color-primario);
+    padding: 60px 45px;
+    display: flex;
+}
+
+footer div:nth-child(1){
+    flex: 2;
+}
+
+footer div{
+    flex: 1;
+    color: white;
+    font-weight: 500;
+}
