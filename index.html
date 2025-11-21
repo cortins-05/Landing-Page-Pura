@@ -8,6 +8,9 @@
     
     <!--Estilos-->
     <link rel="stylesheet" href="styles.css">
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
 
     <!-- Fuentes -->
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
@@ -17,10 +20,9 @@
     <div id="menu-desplegable">
         <div><a href="#modelos"><h1>Modelos</h1></a></div>
         <div><a href="#servicios"><h1>Servicios</h1></a></div>
-        <div><a href=""><h1>Concesionarios</h1></a></div>
-        <div><a href=""><h1>Empresa</h1></a></div>
-        <div><a href=""><h1>Noticias</h1></a></div>
-        <div><a href=""><h1>Historia</h1></a></div>
+        <div><a href="#concesionarios"><h1>Concesionarios</h1></a></div>
+        <div><a href="#empresa"><h1>Empresa</h1></a></div>
+        <div style="grid-column: span 2;"><a href="#noticias"><h1>Noticias</h1></a></div>
     </div>
 
     <nav id="navegacion">
@@ -54,8 +56,8 @@
                 <h3>Modelos</h3>
                 <p><span class="anton enlace">Descubrir todos los modelos</span></p>
             </div>
-            <div class="carousel">
-                <div class="carousel-track">
+            <div id="carousel">
+                <div id="carousel-track">
                     <img src="assets/moto1.jpg" class="slide">
                     <img src="assets/moto2.jpg" class="slide">
                     <img src="assets/moto3.jpg" class="slide">
@@ -93,7 +95,52 @@
                     <img src="assets/taller4.jpg">
                     <p class="anton">Disponemos de recambios originales y homologados para asegurar el mejor rendimiento y durabilidad en tu moto.</p>
                 </div>
+            </div>  
+        </section>
+        <section id="concesionarios">
+            <h2 class="anton">Encuentra el tuyo!!</h2>            
+            <div id="map"></div>
+        </section>
+        <section id="empresa">
+            <div style="overflow: hidden;">
+            <div id="contenido-empresa">
+                <div class="display">
+                    <img src="assets/empresa.jpg">
+                    <h4 class="anton">
+                        Líderes en nuestro sector
+                        <span>
+                            Somos una empresa comprometida con la innovación y el crecimiento sostenible. 
+                            Nuestro equipo trabaja cada día para ofrecer soluciones eficientes que superan 
+                            las expectativas de nuestros clientes en cada proyecto.
+                        </span>
+                    </h4>
+                </div>
+                <div class="display">
+                    <img src="assets/empresa2.jpg">
+                    <h4 class="anton">
+                        Compromiso con la calidad
+                        <span>
+                            Garantizamos procesos de trabajo rigurosos y un control de calidad constante. 
+                            Cada producto y servicio que ofrecemos es el resultado de nuestra dedicación, 
+                            experiencia y pasión por hacer las cosas bien.
+                        </span>
+                    </h4>
+                </div>
+                <div class="display">
+                    <img src="assets/empresa3.jpg">
+                    <h4 class="anton">
+                        Innovación que impulsa el futuro
+                        <span>
+                            Apostamos por la tecnología, la creatividad y el desarrollo continuo. 
+                            Nuestro objetivo es anticiparnos a las necesidades del mercado y 
+                            ofrecer soluciones que marquen la diferencia en el día a día de nuestros clientes.
+                        </span>
+                    </h4>
+                </div>
             </div>
+            </div>
+        </section>
+        <section id="noticias">
             
         </section>
     </main>
@@ -101,6 +148,24 @@
     <footer></footer>
 
     <script src="jquery-3.7.1.min.js"></script>
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
     <script src="scripts.js"></script>
+    <script>
+        var map = L.map('map',{
+            dragging: false,
+            scrollWheelZoom: false,
+            doubleClickZoom: false,
+            touchZoom: false,
+            keyboard: false,
+            zoomControl:false
+        }).setView([40, 3], 5);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+        L.marker([42, 3]).addTo(map);
+        L.marker([41, -3]).addTo(map);
+        L.marker([40, -6]).addTo(map);
+        L.marker([38, -6]).addTo(map);
+    </script>
 </body>
 </html>
