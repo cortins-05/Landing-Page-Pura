@@ -477,4 +477,17 @@ footer div{
     #modelos>div:nth-child(1)>h3 {
         font-size: 1em !important;
     }
+    .servicio-imagen img{
+        width: 100% !important;
+        height: auto;
+    }
+    .servicio-imagen p{
+        width: 100% !important;
+    }
+    #empresa{
+        height: 80vh;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
 }
